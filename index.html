@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OCR App - Home</title>
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to right, #656285, #2b7b8d);
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffeaa7;
+        }
+
+        .container {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+            flex-grow: 1;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        p.description {
+            font-size: 1.2rem;
+            color: #dfe6e9;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card h5 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .footer {
+            background-color: rgba(0, 0, 0, 0.25);
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #dfe6e9;
+        }
+
+        .cta-buttons .btn {
+            margin: 0 10px;
+            border-radius: 25px;
+            padding: 0.6rem 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar d-flex align-items-center justify-content-between">
+        <!-- Logo on the left -->
+        <div>
+            <a href="/">
+                <img src="https://cdn-icons-png.flaticon.com/512/2950/2950656.png" alt="OCR App Logo" style="height: 40px; vertical-align: middle;">
+            </a>
+        </div>
+
+        <!-- Navigation Links on the right -->
+        <div class="d-flex gap-4">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/auth/register">Register</a>
+            <a href="/auth/login">Login</a>
+            <a href="/super_admin_dashboard">Super Admin Dashboard</a> <!-- Link to Super Admin Dashboard -->
+        </div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="container">
+        <h2>Welcome to the OCR & Face Recognition App</h2>
+        <p class="description">Easily recognize ID cards, extract data, and manage attendance automatically.</p>
+
+        <div class="cta-buttons">
+            <a href="/auth/register" class="btn btn-light text-dark">Student Register</a>
+            <a href="/auth/staff/register" class="btn btn-outline-light">Staff Ragister</a>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-card">
+                <i class="bi bi-person-bounding-box"></i>
+                <h5>Face Recognition</h5>
+                <p>Mark attendance with camera-based student identification.</p>
+            </div>
+            <div class="feature-card">
+                <i class="bi bi-card-text"></i>
+                <h5>OCR ID Scanning</h5>
+                <p>Extract data from Aadhaar and PAN cards accurately.</p>
+            </div>
+            <div class="feature-card">
+                <i class="bi bi-clipboard-data"></i>
+                <h5>Smart Attendance</h5>
+                <p>View and manage attendance history with ease.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 OCR App - All Rights Reserved
+    </div>
+
+</body>
+</html>

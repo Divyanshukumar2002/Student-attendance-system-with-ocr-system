@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - Smart Attendance System</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar a {
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #0d6efd;
+    }
+
+    .about-section {
+      padding: 3rem 2rem;
+      flex-grow: 1;
+    }
+
+    .about-title {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #0d6efd;
+      margin-bottom: 10px;
+    }
+
+    .about-content p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      color: #0d6efd;
+      margin-right: 8px;
+    }
+
+    .system-image {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      margin-top: 30px;
+    }
+
+    .section-box {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer {
+      background-color: rgba(0, 0, 0, 0.05);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/auth/register">Register</a>
+    <a href="/auth/login">Login</a>
+  </div>
+
+  <!-- About Section -->
+  <div class="container about-section">
+    <div class="text-center mb-5">
+      <h1 class="about-title">About the Smart Attendance System</h1>
+      <p class="text-muted">An AI-powered student attendance system using Face Recognition and OCR on Aadhaar & PAN cards</p>
+      <img src="images.jpg" alt="Attendance System" class="system-image">
+    </div>
+
+    <div class="about-content">
+      <div class="row">
+        <div class="col-md-6 section-box">
+          <h4><i class="bi bi-person-check feature-icon"></i> Face Recognition</h4>
+          <p>Real-time face detection and recognition using deep learning. Ensures that only the actual student is present during check-in.</p>
+        </div>
+        <div class="col-md-6 section-box">
+          <h4><i class="bi bi-card-text feature-icon"></i> OCR Integration</h4>
+          <p>Extracts important identity information from Aadhaar and PAN cards using Optical Character Recognition (OCR) with Tesseract.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 section-box">
+          <h4><i class="bi bi-journal-text feature-icon"></i> Data Extraction</h4>
+          <p><strong>Aadhaar:</strong> Name, Aadhaar Number, DOB, Gender<br><strong>PAN:</strong> Name, PAN Number, Father's Name, DOB</p>
+        </div>
+        <div class="col-md-6 section-box">
+          <h4><i class="bi bi-database feature-icon"></i> MongoDB Storage</h4>
+          <p>All student data and attendance logs are securely stored in MongoDB for tracking and reporting.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col section-box">
+          <h4><i class="bi bi-calendar-check feature-icon"></i> Smart Attendance</h4>
+          <p>Combines face and ID verification to automatically mark attendance with timestamps—preventing proxy entries and ensuring authenticity.</p>
+        </div>
+      </div>
+
+      <!-- Back Button -->
+      <div class="text-center back-btn">
+        <a href="/" class="btn btn-primary"><i class="bi bi-arrow-left-circle"></i> Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 OCR App - All Rights Reserved
+  </div>
+
+</body>
+</html>

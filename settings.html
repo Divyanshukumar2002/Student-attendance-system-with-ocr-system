@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Settings{% endblock %}
+
+{% block content %}
+<h3>Update Profile</h3>
+<form method="POST" action="/student/update_profile">
+    <div class="mb-2">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" value="{{ student.email }}">
+    </div>
+    <div class="mb-2">
+        <label>Mobile</label>
+        <input type="tel" name="mobile" class="form-control" value="{{ student.mobile }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Update Profile</button>
+</form>
+
+<hr>
+
+<h3 class="mt-4">Reset Password</h3>
+<form method="POST" action="/student/reset_password">
+    <div class="mb-2">
+        <label>Old Password</label>
+        <input type="password" name="old_password" class="form-control">
+    </div>
+    <div class="mb-2">
+        <label>New Password</label>
+        <input type="password" name="new_password" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-warning">Reset Password</button>
+</form>
+{% endblock %}

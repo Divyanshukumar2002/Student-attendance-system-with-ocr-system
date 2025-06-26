@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+{% block title %}Student Dashboard{% endblock %}
+
+
+<div class="dashboard">
+    <h4>📊 Attendance Overview</h4>
+    <canvas id="attendanceChart" height="200"></canvas>
+
+    <!-- Example Form -->
+    <form method="POST" class="mt-4">
+        <div class="mb-3">
+            <label for="some_data" class="form-label">Enter Some Data</label>
+            <input type="text" class="form-control" id="some_data" name="some_data" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Flash Message for POST actions -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+</div>
+
+<script>
+    const ctx = document.getElementById('attendanceChart').getContext('2d');
+    const attendanceChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ labels|safe }},
+            datasets: [{
+                label: 'Attendance (%)',
+                data: {{ data|safe }},
+                backgroundColor: '#0dcaf0'
+            }]
+        },
+        options: {
+            scales: {
+                y: { beginAtZero: true, max: 100 }
+            }
+        }
+    });
+</script>
+

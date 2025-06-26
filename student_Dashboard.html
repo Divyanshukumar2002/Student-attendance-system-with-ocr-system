@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+{% block title %}Student Dashboard{% endblock %}
+
+
+<div class="dashboard row">
+    <div class="col-md-4 text-center">
+        <img src="{{ student.photo_url }}" alt="Student Photo" class="img-fluid rounded-circle mb-3" style="max-width: 200px;">
+        <h4>{{ student.first_name }} {{ student.last_name }}</h4>
+        <p>{{ student.college_name }}</p>
+    </div>
+
+    <div class="col-md-8">
+        <h5>Student Details</h5>
+        <ul class="list-group mb-4">
+            <li class="list-group-item bg-dark text-white"><strong>Username:</strong> {{ student.username }}</li>
+            <li class="list-group-item bg-dark text-white"><strong>Email:</strong> {{ student.email }}</li>
+            <li class="list-group-item bg-dark text-white"><strong>DOB:</strong> {{ student.dob }}</li>
+            <li class="list-group-item bg-dark text-white"><strong>Mobile:</strong> {{ student.mobile }}</li>
+        </ul>
+
+        <h5>Attendance Overview</h5>
+        <canvas id="attendanceChart"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('attendanceChart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ dates|tojson }},
+            datasets: [{
+                label: 'Attendance',
+                data: {{ attendance_data|tojson }},
+                backgroundColor: '#74b9ff',
+                borderColor: '#0984e3',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: { y: { beginAtZero: true, ticks: { color: 'white' } }, x: { ticks: { color: 'white' } } }
+        }
+    });
+</script>
+
